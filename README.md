@@ -1,2 +1,2 @@
 # docker-ci
-Docker CI Image
+Docker CI Image with PHP, Node, Python, Chrome, Composer ...
