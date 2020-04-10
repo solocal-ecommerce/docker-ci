@@ -113,7 +113,7 @@ RUN set -x \
 
 # Node dependencies
 RUN set -x \
-    && npm i -g lighthouse
+    && npm i -g lighthouse \
     && npm i -g --unsafe-perm node-sass
 
 # Log versions
