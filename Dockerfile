@@ -103,7 +103,9 @@ RUN pip3 install \
       jira \
       GitPython \
       acapi \
-      psutil
+      psutil \
+      requests_mock \
+      aioresponses
 
 # Node
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
