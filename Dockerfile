@@ -80,6 +80,12 @@ RUN mv composer.phar /usr/local/bin/composer \
     && chmod +x /usr/local/bin/composer \
     && composer self-update --preview
 
+# Acquia Cli
+RUN wget https://github.com/typhonius/acquia_cli/releases/latest/download/acquiacli.phar
+RUN mv acquiacli.phar /usr/local/bin/acquiacli \
+    && chmod +x /usr/local/bin/acquiacli \
+    && acquiacli self:update
+
 # Python
 ENV PYTHON_VERSION 3.7
 
