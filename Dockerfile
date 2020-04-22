@@ -111,7 +111,10 @@ RUN pip3 install \
       acapi \
       psutil \
       requests_mock \
-      aioresponses
+      aioresponses \
+      twine \
+      setuptools \
+      wheel
 
 # Node
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
