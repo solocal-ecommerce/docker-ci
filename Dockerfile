@@ -17,6 +17,7 @@ RUN apt-get install -y \
     wget \
     zip \
     unzip \
+    certbot \
     curl \
     rsync \
     ssh \
