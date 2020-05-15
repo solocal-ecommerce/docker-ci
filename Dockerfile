@@ -17,7 +17,6 @@ RUN apt-get install -y \
     wget \
     zip \
     unzip \
-    certbot \
     curl \
     rsync \
     ssh \
@@ -34,6 +33,15 @@ RUN apt-get install -y \
     libffi-dev
 
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+
+# Certbot
+
+RUN add-apt-repository universe
+    && add-apt-repository ppa:certbot/certbot 
+
+RUN set -x \
+    && apt-get update
+    && apt-get install -y certbot
 
 # Chrome
 RUN echo 'deb http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/chrome.list
