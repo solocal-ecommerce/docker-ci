@@ -36,11 +36,11 @@ RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
 # Certbot
 
-RUN add-apt-repository universe
+RUN add-apt-repository universe \
     && add-apt-repository ppa:certbot/certbot 
 
 RUN set -x \
-    && apt-get update
+    && apt-get update \
     && apt-get install -y certbot
 
 # Chrome
