@@ -97,7 +97,7 @@ RUN set -x \
   && cd acquia_cli \
   && composer install \
   && chmod +x bin/acquiacli \
-  && ln -s bin/acquiacli /usr/local/bin/acquiacli
+  && ln -s /usr/local/share/bin/acquia_cli /usr/local/bin/acquiacli
 
 # Python
 ENV PYTHON_VERSION 3.7
