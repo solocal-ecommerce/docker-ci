@@ -96,8 +96,8 @@ RUN set -x \
   && git clone https://github.com/solocal-ecommerce/acquia_cli.git \
   && cd acquia_cli \
   && composer install \
-  && chmod +x bin/acquiacli \
-  && ln -s /usr/local/share/bin/acquia_cli /usr/local/bin/acquiacli
+  && chmod +x /usr/local/share/bin/acquiacli \
+  && ln -s /usr/local/share/bin/acquiacli /usr/local/bin/acquiacli
 
 # Python
 ENV PYTHON_VERSION 3.7
