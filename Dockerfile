@@ -37,7 +37,7 @@ RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 # Certbot
 
 RUN add-apt-repository universe \
-    && add-apt-repository ppa:certbot/certbot 
+    && add-apt-repository ppa:certbot/certbot
 
 RUN set -x \
     && apt-get update \
@@ -91,10 +91,13 @@ RUN mv composer.phar /usr/local/bin/composer \
     && composer self-update --preview
 
 # Acquia Cli
-RUN wget https://github.com/typhonius/acquia_cli/releases/latest/download/acquiacli.phar
-RUN mv acquiacli.phar /usr/local/bin/acquiacli \
-    && chmod +x /usr/local/bin/acquiacli \
-    && acquiacli self:update
+RUN set -x \
+  && cd /usr/local/share \
+  && git clone https://github.com/solocal-ecommerce/acquia_cli.git \
+  && cd acquia_cli \
+  && composer install \
+  && chmod +x bin/acquiacli \
+  && ln -s bin/acquiacli /usr/local/bin/acquiacli
 
 # Python
 ENV PYTHON_VERSION 3.7
