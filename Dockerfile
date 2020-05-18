@@ -145,7 +145,6 @@ RUN set -x \
 RUN set -x \
     && export \
     && composer -V \
-    && acquiacli -V \
     && python3 --version \
     && pip3 --version \
     && pip3 list \
