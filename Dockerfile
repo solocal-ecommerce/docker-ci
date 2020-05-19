@@ -97,7 +97,7 @@ RUN set -x \
   && cd acquia_cli \
   && composer install \
   && chmod +x /usr/local/share/acquia_cli/bin/acquiacli \
-  && ln -s /usr/local/share/acquia_cli/bin/acquiacli /usr/local/bin/acquiacli2
+  && ln -s /usr/local/share/acquia_cli/bin/acquiacli /usr/local/bin/acquiacli-dev
 
 RUN wget https://github.com/typhonius/acquia_cli/releases/latest/download/acquiacli.phar
 RUN mv acquiacli.phar /usr/local/bin/acquiacli \
