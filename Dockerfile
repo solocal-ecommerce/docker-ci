@@ -97,7 +97,12 @@ RUN set -x \
   && cd acquia_cli \
   && composer install \
   && chmod +x /usr/local/share/acquia_cli/bin/acquiacli \
-  && ln -s /usr/local/share/acquia_cli/bin/acquiacli /usr/local/bin/acquiacli
+  && ln -s /usr/local/share/acquia_cli/bin/acquiacli /usr/local/bin/acquiacli2
+
+RUN wget https://github.com/typhonius/acquia_cli/releases/latest/download/acquiacli.phar
+RUN mv acquiacli.phar /usr/local/bin/acquiacli \
+    && chmod +x /usr/local/bin/acquiacli \
+    && acquiacli self:update
 
 # Python
 ENV PYTHON_VERSION 3.7
