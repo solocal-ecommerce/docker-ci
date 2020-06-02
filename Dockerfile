@@ -91,7 +91,7 @@ RUN mv composer.phar /usr/local/bin/composer \
     && composer self-update --preview
 
 # Acquia Cli
-RUN set -x \
+RUN set -x \ 
   && cd /usr/local/share \
   && git clone https://github.com/solocal-ecommerce/acquia_cli.git \
   && cd acquia_cli \
