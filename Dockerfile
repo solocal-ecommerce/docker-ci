@@ -146,6 +146,10 @@ RUN set -x \
     && npm i -g lighthouse \
     && npm i -g --unsafe-perm node-sass
 
+# PHP Code Sniffer
+RUN set -x \
+    && pear install PHP_CodeSniffer
+
 # Log versions
 RUN set -x \
     && export \
