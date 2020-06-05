@@ -150,6 +150,15 @@ RUN set -x \
 RUN set -x \
     && pear install PHP_CodeSniffer
 
+# PHP Security Checker
+RUN set -x \
+  && cd /usr/local/share \
+  && git clone https://github.com/sensiolabs/security-checker.git \
+  && cd security-checker \
+  && composer install \
+  && chmod +x /usr/local/share/security-checker/security-checker \
+  && ln -s /usr/local/share/security-checker/security-checker /usr/local/bin/security-checker
+
 # Log versions
 RUN set -x \
     && export \
