@@ -30,7 +30,8 @@ RUN apt-get install -y \
     libpng-dev \
     libpng16-16 \
     libxml2-dev \
-    libffi-dev
+    libffi-dev \
+    tree
 
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
@@ -139,7 +140,8 @@ RUN pip3 install -U \
       twine \
       setuptools \
       wheel \
-      cffi
+      cffi \
+      pymsteams
 
 # Node
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
