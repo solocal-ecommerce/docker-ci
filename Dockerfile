@@ -90,6 +90,12 @@ RUN mv composer.phar /usr/local/bin/composer \
     && chmod +x /usr/local/bin/composer \
     && composer self-update --preview
 
+RUN composer global require hirak/prestissimo \
+	--prefer-dist \
+	--no-progress \
+	--no-suggest \
+	--classmap-authoritative
+
 # Acquia Cli
 RUN set -x \ 
   && cd /usr/local/share \
