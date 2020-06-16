@@ -126,22 +126,10 @@ RUN set -x \
 RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python${PYTHON_VERSION} 1
 
 RUN pip3 install -U \
-      requests \
-      urllib3 \
-      pyOpenSSL \
-      docopt \
-      slackclient \
-      jira \
-      GitPython \
-      acapi \
-      psutil \
-      requests_mock \
-      aioresponses \
       twine \
       setuptools \
       wheel \
-      cffi \
-      pymsteams
+      ci-tools     
 
 # Node
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
