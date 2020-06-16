@@ -30,8 +30,7 @@ RUN apt-get install -y \
     libpng-dev \
     libpng16-16 \
     libxml2-dev \
-    libffi-dev \
-    tree
+    libffi-dev
 
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
