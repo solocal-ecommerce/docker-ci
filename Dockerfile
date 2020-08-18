@@ -88,13 +88,7 @@ RUN set -x \
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer \
     && chmod +x /usr/local/bin/composer \
-    && composer self-update --preview
-
-RUN composer global require hirak/prestissimo \
-	--prefer-dist \
-	--no-progress \
-	--no-suggest \
-	--classmap-authoritative
+    && composer self-update
 
 # Acquia Cli
 RUN set -x \ 
