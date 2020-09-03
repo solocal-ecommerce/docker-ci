@@ -55,8 +55,7 @@ RUN set -x \
 	fonts-ipafont-gothic \
 	fonts-wqy-zenhei \
 	fonts-thai-tlwg \
-	fonts-kacst \
-	ttf-freefont
+	fonts-kacst 
 
 ENV CHROME_BIN /usr/bin/google-chrome
 
