@@ -132,7 +132,7 @@ RUN set -x \
 
 # Node dependencies
 RUN set -x \
-    && npm i -g lighthouse 
+    && npm i -g lighthouse pa11y pa11y-ci 
 
 # PHP Security Checker
 RUN set -x \
