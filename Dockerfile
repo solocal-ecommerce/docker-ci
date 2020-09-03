@@ -50,8 +50,13 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 
 RUN set -x \
     && apt-get update \
-    && apt-get install -y \
-        google-chrome-stable
+    && apt-get install -y --no-install-recommends \
+        google-chrome-stable \ 
+	fonts-ipafont-gothic \
+	fonts-wqy-zenhei \
+	fonts-thai-tlwg \
+	fonts-kacst \
+	ttf-freefont
 
 ENV CHROME_BIN /usr/bin/google-chrome
 
@@ -132,7 +137,10 @@ RUN set -x \
 
 # Node dependencies
 RUN set -x \
-    && npm i -g lighthouse pa11y pa11y-ci 
+    && npm i -g lighthouse 
+
+RUN set -x \
+    && npm install -g pa11y-ci --unsafe-perm=true --allow-root
 
 # PHP Security Checker
 RUN set -x \
