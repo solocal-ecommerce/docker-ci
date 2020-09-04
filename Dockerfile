@@ -109,6 +109,11 @@ RUN mv acquiacli.phar /usr/local/bin/acquiacli \
     && chmod +x /usr/local/bin/acquiacli \
     && acquiacli self:update
 
+# Twigc
+RUN wget https://github.com/okdana/twigc/releases/latest/download/twigc.phar
+RUN mv twigc.phar /usr/local/bin/twigc \
+    && chmod +x /usr/local/bin/twigc
+
 # Python
 ENV PYTHON_VERSION 3.7
 
