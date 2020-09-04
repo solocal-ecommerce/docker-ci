@@ -30,7 +30,8 @@ RUN apt-get install -y \
     libpng-dev \
     libpng16-16 \
     libxml2-dev \
-    libffi-dev
+    libffi-dev \
+    libxss1
 
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 
