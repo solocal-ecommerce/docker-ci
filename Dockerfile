@@ -145,7 +145,7 @@ RUN set -x \
     && npm i -g lighthouse 
 
 RUN set -x \
-    && npm install -g pa11y-ci --unsafe-perm=true --allow-root
+    && npm install -g pa11y-ci pa11y-ci-reporter-html --unsafe-perm=true --allow-root
 
 # PHP Security Checker
 RUN set -x \
